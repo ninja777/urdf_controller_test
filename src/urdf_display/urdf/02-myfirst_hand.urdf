@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+<robot name="myfirst_hand">
+	<link name="world"/>
+
+  	<material name="blue">
+  		<color rgba="0 0 0.6 1"/>
+  	</material>
+  	
+  	<material name="white">
+  		<color rgba="1 1 1 1"/>
+  	</material>
+
+  	<link name="base_link">
+    	<visual>
+      		<geometry>
+        		<box size="2.5 3.0 1.5"/>
+      		</geometry>
+      		<material name="blue"/>
+    	</visual>
+    	<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+
+  	<link name="sub_base_link">
+  		<visual>
+  			<geometry>
+  				<cylinder length="0.5" radius="1.0"/>
+  			</geometry>
+  			<material name="white"/>
+  		</visual>
+  		<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+	<!-- <a> This is strange: Links for Finger 1 but true! </a>-->
+  	<link name="finger_1_1">
+  		<visual>
+  			<geometry>
+  				<cylinder length="0.1" radius="0.5"/>
+  			</geometry>
+  			<material name="white"/>
+  		</visual>
+  		<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+
+  	<link name="finger_1_2">
+  		<visual>
+  			<geometry>
+  				<box size="0.75 2 0.75"/>
+  			</geometry>
+  			<origin rpy="0 0 0" xyz="0 0.75 0"/>
+  			<material name="blue"/>
+  		</visual>
+  		<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+
+  	<link name="finger_1_3">
+  		<visual>
+  			<geometry>
+  				<box size="0.50 2 0.50"/>
+  			</geometry>
+  			<origin rpy="0 0 0" xyz="0 0.75 0"/>
+  			<material name="white"/>
+  		</visual>
+  		<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+
+  	<!-- <a> This is strange: Links for Finger 2 but true! </a>-->
+  	<link name="finger_2_1">
+  		<visual>
+  			<geometry>
+  				<cylinder length="0.1" radius="0.5"/>
+  			</geometry>
+  			<material name="white"/>
+  		</visual>
+  		<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+
+  	<link name="finger_2_2">
+  		<visual>
+  			<geometry>
+  				<box size="0.75 2 0.75"/>
+  			</geometry>
+  			<origin rpy="0 0 0" xyz="0 0.75 0"/>
+  			<material name="blue"/>
+  		</visual>
+  		<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+
+  	<link name="finger_2_3">
+  		<visual>
+  			<geometry>
+  				<box size="0.50 2 0.50"/>
+  			</geometry>
+  			<origin rpy="0 0 0" xyz="0 0.75 0"/>
+  			<material name="white"/>
+  		</visual>
+  		<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+
+  	<!-- <a> This is strange: Links for Finger 3 but true! </a>-->
+  	<link name="finger_3_1">
+  		<visual>
+  			<geometry>
+  				<cylinder length="0.1" radius="0.5"/>
+  			</geometry>
+  			<material name="white"/>
+  		</visual>
+  		<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+
+  	<link name="finger_3_2">
+  		<visual>
+  			<geometry>
+  				<box size="0.75 2 0.75"/>
+  			</geometry>
+  			<origin rpy="0 0 0" xyz="0 -0.75 0"/>
+  			<material name="blue"/>
+  		</visual>
+  		<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+
+  	<link name="finger_3_3">
+  		<visual>
+  			<geometry>
+  				<box size="0.50 2 0.50"/>
+  			</geometry>
+  			<origin rpy="0 0 0" xyz="0 -0.75 0"/>
+  			<material name="white"/>
+  		</visual>
+  		<inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="0.1"/>
+          <inertia
+            ixx="0.0" ixy="0.0" ixz="0.0"
+            iyy="0.0" iyz="0.0"
+            izz="0.0"/>
+        </inertial>
+  	</link>
+
+
+	<joint name="fixed" type="fixed">
+    	<parent link="world"/>
+    	<child link="base_link"/>
+  	</joint>
+  	
+  	<joint name="base_to_sub_base" type="fixed">
+  		<parent link="base_link"/>
+  		<child link="sub_base_link"/>
+  		<origin xyz="0 0 -1.0"/>
+  	</joint>
+
+  	<joint name="base_to_finger_1_1" type="revolute">
+  		<parent link="base_link"/>
+  		<child link="finger_1_1"/>
+  		<limit effort="1000.0" lower="-2.0" upper="0.25" velocity="0.5"/>
+  		<axis xyz="0 0 1"/>
+  		<origin xyz="1 1.25 0.75"/>
+  	</joint>
+
+  	<joint name="finger_1_1_to_finger_1_2" type="revolute">
+  		<parent link="finger_1_1"/>
+  		<child link="finger_1_2"/>
+  		<limit effort="1000.0" lower="-0.1" upper="3.0" velocity="0.5"/>
+  		<axis xyz="1 0 0"/>
+  		<origin xyz="0 0 0.5"/>
+  	</joint>
+
+  	<joint name="finger_1_2_to_finger_1_3" type="revolute">
+  		<parent link="finger_1_2"/>
+  		<child link="finger_1_3"/>
+  		<limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5"/>
+  		<axis xyz="1 0 0"/>
+  		<origin xyz="0 2 0"/>
+  	</joint>
+
+  	<joint name="base_to_finger_2_1" type="revolute">
+  		<parent link="base_link"/>
+  		<child link="finger_2_1"/>
+  		<limit effort="1000.0" lower="-2.0" upper="0.25" velocity="0.5"/>
+  		<axis xyz="0 0 1"/>
+  		<origin xyz="-1 1.25 0.75"/>
+  		<mimic joint="base_to_finger_1_1" multiplier="-1"/>
+  	</joint>
+
+  	<joint name="finger_2_1_to_finger_2_2" type="revolute">
+  		<parent link="finger_2_1"/>
+  		<child link="finger_2_2"/>
+  		<limit effort="1000.0" lower="-0.1" upper="3.0" velocity="0.5"/>
+  		<axis xyz="1 0 0"/>
+  		<origin xyz="0 0 0.5"/>
+  	</joint>
+
+  	<joint name="finger_2_2_to_finger_2_3" type="revolute">
+  		<parent link="finger_2_2"/>
+  		<child link="finger_2_3"/>
+  		<limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5"/>
+  		<axis xyz="1 0 0"/>
+  		<origin xyz="0 2 0"/>
+  	</joint>
+
+  	<joint name="base_to_finger_3_1" type="revolute">
+  		<parent link="base_link"/>
+  		<child link="finger_3_1"/>
+  		<limit effort="1000.0" lower="-2.0" upper="2.0" velocity="0.5"/>
+  		<axis xyz="0 0 1"/>
+  		<origin xyz="0 -1.25 0.75"/>
+  	</joint>
+
+  	<joint name="finger_3_1_to_finger_3_2" type="revolute">
+  		<parent link="finger_3_1"/>
+  		<child link="finger_3_2"/>
+  		<limit effort="1000.0" lower="-0.1" upper="3.0" velocity="0.5"/>
+  		<axis xyz="-1 0 0"/>
+  		<origin xyz="0 0 0.5"/>
+  	</joint>
+
+  	<joint name="finger_3_2_to_finger_3_3" type="revolute">
+  		<parent link="finger_3_2"/>
+  		<child link="finger_3_3"/>
+  		<limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5"/>
+  		<axis xyz="-1 0 0"/>
+  		<origin xyz="0 -2 0"/>
+  	</joint>
+
+  	  <!-- This block connects the head_swivel joint to an actuator (motor), which informs both
+  simulation and visualization of the robot -->
+  	<transmission name="finger1_1_trans" type="SimpleTransmission">
+    	<type>transmission_interface/SimpleTransmission</type>
+    	<actuator name="$finger11_motor">
+      		<mechanicalReduction>1</mechanicalReduction>
+    	</actuator>
+    	<joint name="base_to_finger_1_1">
+      		<hardwareInterface>PositionJointInterface</hardwareInterface>
+    	</joint>
+  </transmission>
+
+  <transmission name="finger1_2_trans" type="SimpleTransmission">
+    	<type>transmission_interface/SimpleTransmission</type>
+    	<actuator name="$finger12_motor">
+      		<mechanicalReduction>1</mechanicalReduction>
+    	</actuator>
+    	<joint name="finger_1_1_to_finger_1_2">
+      		<hardwareInterface>PositionJointInterface</hardwareInterface>
+    	</joint>
+  </transmission>
+
+  <transmission name="finger2_1_trans" type="SimpleTransmission">
+    	<type>transmission_interface/SimpleTransmission</type>
+    	<actuator name="$finger21_motor">
+      		<mechanicalReduction>1</mechanicalReduction>
+    	</actuator>
+    	<joint name="base_to_finger_2_1">
+      		<hardwareInterface>PositionJointInterface</hardwareInterface>
+    	</joint>
+  </transmission>
+
+  <transmission name="finger2_2_trans" type="SimpleTransmission">
+    	<type>transmission_interface/SimpleTransmission</type>
+    	<actuator name="$finger22_motor">
+      		<mechanicalReduction>1</mechanicalReduction>
+    	</actuator>
+    	<joint name="finger_2_1_to_finger_2_2">
+      		<hardwareInterface>PositionJointInterface</hardwareInterface>
+    	</joint>
+  </transmission>
+
+  	<gazebo>
+    	<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      		<robotNamespace>/</robotNamespace>
+    	</plugin>
+  	</gazebo>
+</robot>
