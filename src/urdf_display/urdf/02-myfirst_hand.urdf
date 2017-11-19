@@ -312,6 +312,16 @@
     	</joint>
   </transmission>
 
+  <transmission name="finger1_3_trans" type="SimpleTransmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="$finger13_motor">
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+      <joint name="finger_1_2_to_finger_1_3">
+          <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+  </transmission>
+
   <transmission name="finger2_1_trans" type="SimpleTransmission">
     	<type>transmission_interface/SimpleTransmission</type>
     	<actuator name="$finger21_motor">
@@ -332,6 +342,46 @@
     	</joint>
   </transmission>
 
+  <transmission name="finger2_3_trans" type="SimpleTransmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="$finger23_motor">
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+      <joint name="finger_2_2_to_finger_2_3">
+          <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+  </transmission>
+
+  <transmission name="finger3_1_trans" type="SimpleTransmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="$finger31_motor">
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+      <joint name="base_to_finger_3_1">
+          <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+  </transmission>
+
+  <transmission name="finger2_3_trans" type="SimpleTransmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="$finger32_motor">
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+      <joint name="finger_3_1_to_finger_3_2">
+          <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+  </transmission>
+
+  <transmission name="finger3_3_trans" type="SimpleTransmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="$finger33_motor">
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+      <joint name="finger_3_2_to_finger_3_3">
+          <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+  </transmission>
+  
   	<gazebo>
     	<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       		<robotNamespace>/</robotNamespace>
