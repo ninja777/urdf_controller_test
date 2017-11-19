@@ -18,7 +18,7 @@ To pub to Gazebo to move:
 	rostopic pub  /r2d2_head_controller/command std_msgs/Float64MultiArray "layout:
 	  dim:
 	  - label: ''
-	    size: 4
+	    size: 9
 	    stride: 1
 	  data_offset: 0
-	data: [0, 0.5, 0.5, 0.5]"
+	data: [0, 0.5, 0.5, 0, 0.5, 0.5, 0, 0.5, 0.5]"
