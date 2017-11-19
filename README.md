@@ -11,7 +11,7 @@ To Run Gazebo with a specific model do:
 
 To Run Gazebo with controller do 
 	
-	roslaunch urdf_display joints.launch 
+	roslaunch urdf_display joints.launch
 
 To pub to Gazebo to move:
 
@@ -21,4 +21,4 @@ To pub to Gazebo to move:
 	    size: 9
 	    stride: 1
 	  data_offset: 0
-	data: [0, 0.5, 0.5, 0, 0.5, 0.5, 0, 0.5, 0.5]"
+	data: [0.5, 0.5, 0.5, -0.5, 0.5, 0.0, 0, 0.0, 0.0]"

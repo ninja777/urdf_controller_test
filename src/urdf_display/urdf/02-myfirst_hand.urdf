@@ -13,7 +13,7 @@
   	<link name="base_link">
     	<visual>
       		<geometry>
-        		<box size="2.5 3.0 1.5"/>
+        		<mesh filename="package://urdf_display/meshes/base_link.STL"/>
       		</geometry>
       		<material name="blue"/>
     	</visual>
@@ -30,12 +30,12 @@
   	<link name="sub_base_link">
   		<visual>
   			<geometry>
-  				<cylinder length="0.5" radius="1.0"/>
+  				<cylinder length="0.2" radius="0.5"/>
   			</geometry>
   			<material name="white"/>
   		</visual>
   		<inertial>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <origin xyz="0 0 0.3" rpy="0 0 0"/>
           <mass value="0.1"/>
           <inertia
             ixx="0.0" ixy="0.0" ixz="0.0"
@@ -47,7 +47,7 @@
   	<link name="finger_1_1">
   		<visual>
   			<geometry>
-  				<cylinder length="0.1" radius="0.5"/>
+  				<mesh filename="package://urdf_display/meshes/swivel_1.STL"/>
   			</geometry>
   			<material name="white"/>
   		</visual>
@@ -64,9 +64,11 @@
   	<link name="finger_1_2">
   		<visual>
   			<geometry>
-  				<box size="0.75 2 0.75"/>
+  				<mesh filename="package://urdf_display/meshes/proximal_1.STL"/>
   			</geometry>
-  			<origin rpy="0 0 0" xyz="0 0.75 0"/>
+  			<origin
+          xyz="-0.011 0.007 0.011"
+          rpy="3.1459 0 0"/>
   			<material name="blue"/>
   		</visual>
   		<inertial>
@@ -82,9 +84,11 @@
   	<link name="finger_1_3">
   		<visual>
   			<geometry>
-  				<box size="0.50 2 0.50"/>
+  				<mesh filename="package://urdf_display/meshes/distal_1.STL"/>
   			</geometry>
-  			<origin rpy="0 0 0" xyz="0 0.75 0"/>
+  			<origin
+          xyz="-0.077 0.007 0.007"
+          rpy="3.1459 0 0" />
   			<material name="white"/>
   		</visual>
   		<inertial>
@@ -101,7 +105,7 @@
   	<link name="finger_2_1">
   		<visual>
   			<geometry>
-  				<cylinder length="0.1" radius="0.5"/>
+  				<mesh filename="package://urdf_display/meshes/swivel_1.STL"/>
   			</geometry>
   			<material name="white"/>
   		</visual>
@@ -118,9 +122,12 @@
   	<link name="finger_2_2">
   		<visual>
   			<geometry>
-  				<box size="0.75 2 0.75"/>
+  				<mesh filename="package://urdf_display/meshes/proximal_1.STL"/>
   			</geometry>
-  			<origin rpy="0 0 0" xyz="0 0.75 0"/>
+        <origin
+        xyz="-0.011 0.007 0.011"
+        rpy="3.1459 0 0"/>
+  			<origin rpy="0 0 0" xyz="0 0 0"/>
   			<material name="blue"/>
   		</visual>
   		<inertial>
@@ -136,9 +143,12 @@
   	<link name="finger_2_3">
   		<visual>
   			<geometry>
-  				<box size="0.50 2 0.50"/>
+  				<mesh filename="package://urdf_display/meshes/distal_1.STL"/>
   			</geometry>
-  			<origin rpy="0 0 0" xyz="0 0.75 0"/>
+        <origin
+        xyz="-0.077 0.007 0.006"
+        rpy="3.1459 0 0" />
+  			<origin rpy="0 0 0" xyz="0 0 0"/>
   			<material name="white"/>
   		</visual>
   		<inertial>
@@ -155,8 +165,11 @@
   	<link name="finger_3_1">
   		<visual>
   			<geometry>
-  				<cylinder length="0.1" radius="0.5"/>
+  				<mesh filename="package://urdf_display/meshes/swivel_1.STL"/>
   			</geometry>
+        <origin
+        xyz="-0.011 0.007 0.011"
+        rpy="3.1459 0 0"/>
   			<material name="white"/>
   		</visual>
   		<inertial>
@@ -172,9 +185,12 @@
   	<link name="finger_3_2">
   		<visual>
   			<geometry>
-  				<box size="0.75 2 0.75"/>
+  				<mesh filename="package://urdf_display/meshes/proximal_1.STL"/>
   			</geometry>
-  			<origin rpy="0 0 0" xyz="0 -0.75 0"/>
+        <origin
+        xyz="-0.011 0.007 0.011"
+        rpy="3.1459 0 0"/>
+  			<origin rpy="0 0 0" xyz="0 0 0"/>
   			<material name="blue"/>
   		</visual>
   		<inertial>
@@ -190,9 +206,12 @@
   	<link name="finger_3_3">
   		<visual>
   			<geometry>
-  				<box size="0.50 2 0.50"/>
+  				<mesh filename="package://urdf_display/meshes/distal_1.STL"/>
   			</geometry>
-  			<origin rpy="0 0 0" xyz="0 -0.75 0"/>
+        <origin
+        xyz="-0.077 0.007 0.006"
+        rpy="3.1459 0 0" />
+  			<origin rpy="0 0 0" xyz="0 0 0"/>
   			<material name="white"/>
   		</visual>
   		<inertial>
@@ -221,72 +240,94 @@
   		<parent link="base_link"/>
   		<child link="finger_1_1"/>
   		<limit effort="1000.0" lower="-2.0" upper="0.25" velocity="0.5"/>
-  		<axis xyz="0 0 1"/>
-  		<origin xyz="1 1.25 0.75"/>
+  		<axis xyz="0 0 -1"/>
+  		<origin
+        xyz="0.0503973683071414 -0.026 0.063"
+        rpy="6.75550818663469E-16 1.97993848419069E-16 -2.77555756156289E-16" />
   	</joint>
 
   	<joint name="finger_1_1_to_finger_1_2" type="revolute">
   		<parent link="finger_1_1"/>
   		<child link="finger_1_2"/>
   		<limit effort="1000.0" lower="-0.1" upper="3.0" velocity="0.5"/>
-  		<axis xyz="1 0 0"/>
-  		<origin xyz="0 0 0.5"/>
+  		<axis xyz="0 -1 0"/>
+  		<origin
+      xyz="0.01 0 0.0186"
+      rpy="-6.20039667432211E-16 0.28 2.22044604925031E-16" />
   	</joint>
 
   	<joint name="finger_1_2_to_finger_1_3" type="revolute">
   		<parent link="finger_1_2"/>
   		<child link="finger_1_3"/>
   		<limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5"/>
-  		<axis xyz="1 0 0"/>
-  		<origin xyz="0 2 0"/>
+  		<axis xyz="0 -1 0"/>
+  		<origin
+      xyz="0.07600000000000001 0 0.00250000000000002"
+      rpy="0 0 0" />
   	</joint>
 
   	<joint name="base_to_finger_2_1" type="revolute">
   		<parent link="base_link"/>
   		<child link="finger_2_1"/>
   		<limit effort="1000.0" lower="-2.0" upper="0.25" velocity="0.5"/>
-  		<axis xyz="0 0 1"/>
-  		<origin xyz="-1 1.25 0.75"/>
+  		<axis xyz="0 0 -1"/>
+  		<origin
+      xyz="0.0503973683071413 0.0259999999999999 0.063"
+      rpy="1.22459340959228E-15 -7.33448407631817E-16 -1.66533453693773E-16" />
   		<mimic joint="base_to_finger_1_1" multiplier="-1"/>
   	</joint>
 
   	<joint name="finger_2_1_to_finger_2_2" type="revolute">
   		<parent link="finger_2_1"/>
   		<child link="finger_2_2"/>
+      <axis xyz="0 -1 0"/>
   		<limit effort="1000.0" lower="-0.1" upper="3.0" velocity="0.5"/>
-  		<axis xyz="1 0 0"/>
-  		<origin xyz="0 0 0.5"/>
+  		<origin
+      xyz="0.01 0 0.0186"
+      rpy="-1.16908225836102E-15 0.28 1.11022302462515E-16" />
   	</joint>
 
   	<joint name="finger_2_2_to_finger_2_3" type="revolute">
   		<parent link="finger_2_2"/>
   		<child link="finger_2_3"/>
+      <axis xyz="0 -1 0"/>
   		<limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5"/>
-  		<axis xyz="1 0 0"/>
+  		<origin
+      xyz="0.0760000000000001 0 0.00249999999999997"
+      rpy="0 0 0" />
   		<origin xyz="0 2 0"/>
   	</joint>
 
   	<joint name="base_to_finger_3_1" type="revolute">
   		<parent link="base_link"/>
   		<child link="finger_3_1"/>
+      <axis xyz="0 0 -1"/>
   		<limit effort="1000.0" lower="-2.0" upper="2.0" velocity="0.5"/>
-  		<axis xyz="0 0 1"/>
+  		<origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
   		<origin xyz="0 -1.25 0.75"/>
   	</joint>
 
   	<joint name="finger_3_1_to_finger_3_2" type="revolute">
   		<parent link="finger_3_1"/>
   		<child link="finger_3_2"/>
+      <axis xyz="0 -1 0"/>
   		<limit effort="1000.0" lower="-0.1" upper="3.0" velocity="0.5"/>
-  		<axis xyz="-1 0 0"/>
+  		<origin
+      xyz="-0.0299999999999996 0 0.0816000000000002"
+      rpy="-5.55111512312578E-17 0.28 3.14159265358979" />
   		<origin xyz="0 0 0.5"/>
   	</joint>
 
   	<joint name="finger_3_2_to_finger_3_3" type="revolute">
   		<parent link="finger_3_2"/>
   		<child link="finger_3_3"/>
+      <axis xyz="0 -1 0"/>
   		<limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5"/>
-  		<axis xyz="-1 0 0"/>
+  		<origin
+      xyz="0.0760000000000001 0 0.0025"
+      rpy="-1.48887961834512E-45 -1.0995850059156E-76 -7.38531841236285E-32" />
   		<origin xyz="0 -2 0"/>
   	</joint>
 
@@ -298,7 +339,7 @@
       		<mechanicalReduction>1</mechanicalReduction>
     	</actuator>
     	<joint name="base_to_finger_1_1">
-      		<hardwareInterface>PositionJointInterface</hardwareInterface>
+      		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     	</joint>
   </transmission>
 
@@ -308,7 +349,7 @@
       		<mechanicalReduction>1</mechanicalReduction>
     	</actuator>
     	<joint name="finger_1_1_to_finger_1_2">
-      		<hardwareInterface>PositionJointInterface</hardwareInterface>
+      		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     	</joint>
   </transmission>
 
@@ -318,7 +359,7 @@
           <mechanicalReduction>1</mechanicalReduction>
       </actuator>
       <joint name="finger_1_2_to_finger_1_3">
-          <hardwareInterface>PositionJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
   </transmission>
 
@@ -328,7 +369,7 @@
       		<mechanicalReduction>1</mechanicalReduction>
     	</actuator>
     	<joint name="base_to_finger_2_1">
-      		<hardwareInterface>PositionJointInterface</hardwareInterface>
+      		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     	</joint>
   </transmission>
 
@@ -338,7 +379,7 @@
       		<mechanicalReduction>1</mechanicalReduction>
     	</actuator>
     	<joint name="finger_2_1_to_finger_2_2">
-      		<hardwareInterface>PositionJointInterface</hardwareInterface>
+      		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     	</joint>
   </transmission>
 
@@ -348,7 +389,7 @@
           <mechanicalReduction>1</mechanicalReduction>
       </actuator>
       <joint name="finger_2_2_to_finger_2_3">
-          <hardwareInterface>PositionJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
   </transmission>
 
@@ -358,7 +399,7 @@
           <mechanicalReduction>1</mechanicalReduction>
       </actuator>
       <joint name="base_to_finger_3_1">
-          <hardwareInterface>PositionJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
   </transmission>
 
@@ -368,7 +409,7 @@
           <mechanicalReduction>1</mechanicalReduction>
       </actuator>
       <joint name="finger_3_1_to_finger_3_2">
-          <hardwareInterface>PositionJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
   </transmission>
 
@@ -378,7 +419,7 @@
           <mechanicalReduction>1</mechanicalReduction>
       </actuator>
       <joint name="finger_3_2_to_finger_3_3">
-          <hardwareInterface>PositionJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
   </transmission>
   

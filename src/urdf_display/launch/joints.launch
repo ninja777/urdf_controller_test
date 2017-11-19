@@ -19,4 +19,6 @@
     args="r2d2_joint_state_controller
           r2d2_head_controller
           --shutdown-timeout 3"/>
+
+  <node name="hand_visualizer" pkg="urdf_display" type="hand_visualizer.py" respawn="false" output="screen"/>
 </launch>
