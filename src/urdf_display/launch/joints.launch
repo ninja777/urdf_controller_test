@@ -1,5 +1,5 @@
 <launch>
-  <arg name="model" default="$(find urdf_display)/urdf/02-myfirst_hand.urdf"/>
+  <arg name="model" default="$(find urdf_display)/urdf/03-hand.urdf.xacro"/>
   <!-- <arg name="rvizconfig" default="$(find urdf_display)/rviz/urdf.rviz" /> -->
 
   <include file="$(find urdf_display)/launch/gazebo.launch">
