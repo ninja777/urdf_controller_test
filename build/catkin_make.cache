@@ -1,2 +1,0 @@
-urdf_display
--DCATKIN_DEVEL_PREFIX=/home/dnguyen2/personal-project/urdf_controller_test/devel -DCMAKE_INSTALL_PREFIX=/home/dnguyen2/personal-project/urdf_controller_test/install -G Unix Makefiles

@@ -1,8 +1,0 @@
-prefix=/home/dnguyen2/personal-project/urdf_controller_test/install
-
-Name: urdf_display
-Description: Description of urdf_display
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/dnguyen2/personal-project/urdf_controller_test/install/lib 
-Requires: 
