@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>urdf_display</name>
+  <name>reflex_hand_model</name>
   <version>0.0.0</version>
-  <description>The urdf_display package</description>
+  <description>The reflex_hand_model package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
