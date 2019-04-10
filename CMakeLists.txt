@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  ihmc_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -197,3 +198,8 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+## Test arm navigation
+add_executable(hand_command_publisher src/hand_command_publisher.cpp)
+add_dependencies(hand_command_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(hand_command_publisher  ${catkin_LIBRARIES})
