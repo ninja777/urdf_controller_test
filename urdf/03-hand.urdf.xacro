@@ -26,8 +26,6 @@
   </xacro:macro>
 
   <xacro:macro name="reflex_hand_model" params="prefix *origin parent">
-    <link name="${parent}"/>
-
     <link name="${prefix}palm">
       <visual>
         <geometry>

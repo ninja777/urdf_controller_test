@@ -9,23 +9,23 @@
     <xacro:flex_color />
     <xacro:pad_color />
 
+    <link name="world"/>
+
+
     <xacro:reflex_hand_model prefix="l_" parent="world">
         <origin rpy="3.14159 3.14159 0" xyz="-0.00125 -0.5 0.01"/>
     </xacro:reflex_hand_model>
 
-    <xacro:reflex_hand_model prefix="r_" parent="world2">
+    <xacro:reflex_hand_model prefix="r_" parent="world">
         <origin rpy="3.14159 0 0" xyz="-0.00125 0.5 0.01"/>
     </xacro:reflex_hand_model>
 
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+            <legacyModeNS>true</legacyModeNS>
         </plugin>
     </gazebo>
 
-    <joint name="static_world" type="fixed">
-        <parent link="world"/>
-        <child link="world2"/>
-    </joint>
 
 </robot>
