@@ -8,11 +8,13 @@
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />
 
-  <rosparam command="load" file="$(find reflex_hand_model)/config/reflex_hand_config.yaml" />
+  <rosparam command="load" file="$(find reflex_hand_model)/config/reflex_hand_config.yaml"/>
 
-  <node name="hand_controllers" pkg="controller_manager" type="spawner" args="hands_joint_state_controller left_hand_controller right_hand_controller"/>
+  <node name="hand_controllers" pkg="controller_manager" type="spawner" args="hands_joint_state_controller left_hand_controller right_hand_controller" ns="/reflex_hands"/>
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="hands_state_publisher">
-    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="publish_frequency" type="double" value="500.0" />
+    <remap from="/joint_states" to="/reflex_hands/joint_states" />
+
   </node>
 
 </launch>
